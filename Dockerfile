@@ -1,6 +1,6 @@
 FROM caddy:latest
 
-RUN echo "php-fpm7 -F &" >> /init.sh
+RUN echo "php-fpm7 -F &" >> /init.sh \
   && echo "caddy run --config /etc/caddy/Caddyfile --adapter caddyfile" >> /init.sh
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
